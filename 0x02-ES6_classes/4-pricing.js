@@ -20,7 +20,8 @@ export default class Pricing {
         this._currency = val;
     }
     displayFullPrice() {
-        return `${this.amount} ${this.currency.name} ${this._currency._code}`;
+        //return `${this._amount} ${new Currency(this._currency.code, this._currency.name).displayFullCurrency()}`;//
+        return `${this.amount} ${this._currency.name} ${this._currency._code}`;
     }
     static convertPrice(amount, conversionRate) {
         return amount * conversionRate;
