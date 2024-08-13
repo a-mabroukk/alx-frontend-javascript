@@ -1,3 +1,13 @@
 export default function cleanSet(set, startString) {
-  return Array.from(set).filter((string) => string.startsWith(startString)).map((string) => string.slice(startString.length)).join('-');
+  const newString = [];
+  if (startString === '' || typeof startString !== 'string') {
+    return '';
+  }
+  set.forEach((element) => {
+    if (typeof element === 'string' && element.startsWith(startString)) {
+      newString.push(element.slice(startString.length));
+    }
+  });
+
+  return newString.join('-');
 }
